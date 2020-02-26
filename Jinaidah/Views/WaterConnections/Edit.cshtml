@@ -1,0 +1,49 @@
+﻿@model Jinaidah.Models.WaterConnection
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>WaterConnection</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="HoldingInfoId" class="control-label"></label>
+                <select asp-for="HoldingInfoId" class="form-control" asp-items="ViewBag.HoldingInfoId"></select>
+                <span asp-validation-for="HoldingInfoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConnectionDia" class="control-label"></label>
+                <input asp-for="ConnectionDia" class="form-control" />
+                <span asp-validation-for="ConnectionDia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConnectionDate" class="control-label"></label>
+                <input asp-for="ConnectionDate" class="form-control" />
+                <span asp-validation-for="ConnectionDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FloorNos" class="control-label"></label>
+                <input asp-for="FloorNos" class="form-control" />
+                <span asp-validation-for="FloorNos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

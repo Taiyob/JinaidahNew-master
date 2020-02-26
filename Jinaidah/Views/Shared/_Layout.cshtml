@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Jinaidah</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Jinaidah</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <partial name="_LoginPartial" />
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="body-content">
+        <div class="row">
+            <div class="col-md-2">
+                <ul>
+                    <li><a asp-area="" asp-controller="ClientInfoes" asp-action="Index">Client Information</a></li>
+                    <li><a asp-area="" asp-controller="HoldingInfoes" asp-action="Index">Holding InforMation</a></li>
+                    <li><a asp-area="" asp-controller="Divisions" asp-action="Index">Division</a></li>
+                    <li><a asp-area="" asp-controller="Districts" asp-action="Index">District</a></li>
+                    <li><a asp-area="" asp-controller="HoldingCategories" asp-action="Index">Holding Categorie</a></li>
+                    <li><a asp-area="" asp-controller="HoldingTaxes" asp-action="Index">Holding Tax</a></li>
+                    <li><a asp-area="" asp-controller="HoldingTypes" asp-action="Index">Holding Type</a></li>
+                    <li><a asp-area="" asp-controller="Municipilities" asp-action="Index">Muncipality</a></li>
+                    <li><a asp-area="" asp-controller="Roads" asp-action="Index">Road</a></li>
+                    <li><a asp-area="" asp-controller="TaxBills" asp-action="Index">Tax Bill</a></li>
+                    <li><a asp-area="" asp-controller="TaxItemSettings" asp-action="Index">Tax Item Setting</a></li>
+                    <li><a asp-area="" asp-controller="TaxRates" asp-action="Index">Tax Rate</a></li>
+                    <li><a asp-area="" asp-controller="Upzillas" asp-action="Index">Upzilla</a></li>
+                    <li><a asp-area="" asp-controller="Wards" asp-action="Index">Ward</a></li>
+                    <li><a asp-area="" asp-controller="WaterBills" asp-action="Index">Water Bill</a></li>
+                    <li><a asp-area="" asp-controller="WaterConnections" asp-action="Index">Water Connections</a></li>
+                    <li><a asp-area="" asp-controller="WaterRates" asp-action="Index">Water Rate</a></li>
+                </ul>
+            </div>
+            <div class="col-md-10">
+                @RenderBody()
+            </div>
+        </div>
+     
+       
+
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - Jinaidah - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

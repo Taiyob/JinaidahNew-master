@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Jinaidah.Models.Ward>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <a asp-action="Create" class="btn btn-primary">Create New</a>
+    </div>
+    <div class="col-md-6">
+        <div class="float-md-right">
+            @*<h4 class="text-primary"> @ViewBag.count</h4>*@
+            <form asp-action="Index" class="form-inline" method="post">
+
+                <input type="text" name="usrtext" value="@ViewBag.data" class="form-control" placeholder="Search...." />
+
+                <button class="btn btn-success" type="submit">Search</button>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+<br />
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.WardNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WardName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Municipility)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WardNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WardName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Municipility.Address)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

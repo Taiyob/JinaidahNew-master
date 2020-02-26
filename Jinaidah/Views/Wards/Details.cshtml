@@ -1,0 +1,36 @@
+﻿@model Jinaidah.Models.Ward
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Ward</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WardNo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WardNo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WardName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WardName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Municipility)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Municipility.Address)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" class="btn btn-primary" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+</div>

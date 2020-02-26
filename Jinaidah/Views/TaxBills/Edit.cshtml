@@ -1,0 +1,113 @@
+﻿@model Jinaidah.Models.TaxBill
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>TaxBill</h4>
+<hr />
+
+    
+        <form asp-action="Edit">
+            <div class="row">
+                <div class="col-md-4">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    <div class="form-group">
+                        <label asp-for="HoldingInfoId" class="control-label"></label>
+                        <select asp-for="HoldingInfoId" class="form-control" asp-items="ViewBag.HoldingInfoId"></select>
+                        <span asp-validation-for="HoldingInfoId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TaxItemSettingId" class="control-label"></label>
+                        <select asp-for="TaxItemSettingId" class="form-control" asp-items="ViewBag.TaxItemSettingId"></select>
+                        <span asp-validation-for="TaxItemSettingId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="BillNo" class="control-label"></label>
+                        <input asp-for="BillNo" class="form-control" />
+                        <span asp-validation-for="BillNo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TaxRateId" class="control-label"></label>
+                        <input asp-for="TaxRateId" class="form-control" />
+                        <span asp-validation-for="TaxRateId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="BillAmount" class="control-label"></label>
+                        <input asp-for="BillAmount" class="form-control" />
+                        <span asp-validation-for="BillAmount" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Rebate" class="control-label"></label>
+                        <input asp-for="Rebate" class="form-control" />
+                        <span asp-validation-for="Rebate" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="Discount" class="control-label"></label>
+                        <input asp-for="Discount" class="form-control" />
+                        <span asp-validation-for="Discount" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PaidAmount" class="control-label"></label>
+                        <input asp-for="PaidAmount" class="form-control" />
+                        <span asp-validation-for="PaidAmount" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="UnPaidAmount" class="control-label"></label>
+                        <input asp-for="UnPaidAmount" class="form-control" />
+                        <span asp-validation-for="UnPaidAmount" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PaidDate" class="control-label"></label>
+                        <input asp-for="PaidDate" class="form-control" />
+                        <span asp-validation-for="PaidDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PaidBy" class="control-label"></label>
+                        <input asp-for="PaidBy" class="form-control" />
+                        <span asp-validation-for="PaidBy" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="SurCharge" class="control-label"></label>
+                        <input asp-for="SurCharge" class="form-control" />
+                        <span asp-validation-for="SurCharge" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ServiceCharge" class="control-label"></label>
+                        <input asp-for="ServiceCharge" class="form-control" />
+                        <span asp-validation-for="ServiceCharge" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="MonthYear" class="control-label"></label>
+                        <input asp-for="MonthYear" class="form-control" />
+                        <span asp-validation-for="MonthYear" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Remark" class="control-label"></label>
+                        <input asp-for="Remark" class="form-control" />
+                        <span asp-validation-for="Remark" class="text-danger"></span>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </div>
+          </div>
+        </form>
+    
+
+
+<div>
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,64 @@
+﻿@model Jinaidah.Models.WaterRate
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>WaterRate</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="HoldingTypeId" class="control-label"></label>
+                <select asp-for="HoldingTypeId" class="form-control" asp-items="ViewBag.HoldingTypeId"></select>
+                <span asp-validation-for="HoldingTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WaterConnectionId" class="control-label"></label>
+                <select asp-for="WaterConnectionId" class="form-control" asp-items="ViewBag.WaterConnectionId"></select>
+                <span asp-validation-for="WaterConnectionId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rate" class="control-label"></label>
+                <input asp-for="Rate" class="form-control" />
+                <span asp-validation-for="Rate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FloorNos" class="control-label"></label>
+                <input asp-for="FloorNos" class="form-control" />
+                <span asp-validation-for="FloorNos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FloorRate" class="control-label"></label>
+                <input asp-for="FloorRate" class="form-control" />
+                <span asp-validation-for="FloorRate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FineRate" class="control-label"></label>
+                <input asp-for="FineRate" class="form-control" />
+                <span asp-validation-for="FineRate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark" class="control-label"></label>
+                <input asp-for="Remark" class="form-control" />
+                <span asp-validation-for="Remark" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

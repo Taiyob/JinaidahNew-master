@@ -1,0 +1,42 @@
+﻿@model Jinaidah.Models.WaterConnection
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>WaterConnection</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ConnectionDia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ConnectionDia)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ConnectionDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ConnectionDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FloorNos)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FloorNos)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HoldingInfo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HoldingInfo.Address)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" class="btn btn-primary" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+</div>

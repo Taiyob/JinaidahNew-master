@@ -1,0 +1,108 @@
+﻿@model IEnumerable<Jinaidah.Models.WaterBill>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <a asp-action="Create" class="btn btn-primary">Create New</a>
+    </div>
+    <div class="col-md-6">
+        <div class="float-md-right">
+            @*<h4 class="text-primary"> @ViewBag.count</h4>*@
+            <form asp-action="Index" class="form-inline" method="post">
+
+                <input type="text" name="usrtext" value="@ViewBag.data" class="form-control" placeholder="Search...." />
+
+                <button class="btn btn-success" type="submit">Search</button>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+<br />
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MeterNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BillNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BillMonth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BillYear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Unit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SurCharge)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fine)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Due)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NetReading)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Discount)
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MeterNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BillNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BillMonth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BillYear)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Unit)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SurCharge)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fine)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Due)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NetReading)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Discount)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
